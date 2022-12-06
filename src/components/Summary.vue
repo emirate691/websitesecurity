@@ -56,8 +56,8 @@
           <b-col>
             <div>
                 <h6>scan information</h6>
-                <div class="scan_info">Start time&#58;</div>
-                <div class="mt-3 scan_info">Finish time&#58;</div>
+                <div class="scan_info">Start time&#58;{{ currentDate() }}</div>
+                <div class="mt-3 scan_info">Finish time&#58;{{ currentDate() }}</div>
                 <div class="mt-3 scan_info">scan duration&#58;</div>
                 <div class="mt-3 scan_info">Test Performed&#58;</div>
             </div>
@@ -87,8 +87,12 @@ export default {
       }
    },
    methods: {
-
-   }
+    currentDate() {
+      const current = new Date();
+      const date = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
+      return date;
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
