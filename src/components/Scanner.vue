@@ -9,7 +9,7 @@
                         <span class="mt-5">
                             Scanning "Https&#58;//maintestwebsite.com"
                         </span>
-                        <div class="scan"> 
+                        <div class="scan" > 
                             
                             <img src="@/assets/scaning__process.png" class="m-5 pt-5">
                         </div>
@@ -24,16 +24,28 @@
 </template>
 <script>
 export default {
-    data() {
+    data()  { 
         return {
-         counter: 30
+            counter: 0
         }
-        
+    },
+    methods: {
+        scanCounte() { 
+          
+          if (this.counter < 100) {
+            setTimeout(() => {
+                this.counter += 1
+                this.scanCounte() }, 1000)
+          }
+            
+        },
+    
     
     },
-    
-    
-}
+    created () {
+        this.scanCounte()
+    }
+ }
 </script>
 <style lang="scss" scoped>
 
