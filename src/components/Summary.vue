@@ -56,8 +56,8 @@
           <b-col>
             <div>
                 <h6>scan information</h6>
-                <div class="scan_info">Start time&#58;{{ currentDate() }}</div>
-                <div class="mt-3 scan_info">Finish time&#58;{{ currentDate() }}</div>
+                <div class="scan_info">Start time&#58;<span class="fulldate">{{ fulldatetime }}</span></div>
+                <div class="mt-3 scan_info">Finish time&#58;{{ fulldatetime }}</div>
                 <div class="mt-3 scan_info">scan duration&#58;</div>
                 <div class="mt-3 scan_info">Test Performed&#58;</div>
             </div>
@@ -83,16 +83,22 @@ export default {
          starTime:"",
          endTime:"",
          scanDuration:"",
-         testPerformed:""
+         testPerformed:"",
+         fulldatetime: ''
       }
    },
    methods: {
-    currentDate() {
-      const current = new Date();
-      const date = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
-      return date;
-    }
-  }
+    printFullDate: function(){
+            return new Date();
+          }
+    },
+    mounted: function () {
+      
+      
+      this.fulldatetime = this.printFullDate()
+   },
+
+  
 }
 </script>
 <style lang="scss" scoped>
@@ -191,6 +197,9 @@ export default {
         justify-content:right;
         color:#ffffff;
         padding:5px 100px;
+     }
+     .fulldate{
+       //
      }
    }
 </style>
