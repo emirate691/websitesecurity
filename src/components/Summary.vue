@@ -59,7 +59,7 @@
             <div>
                 <h6>scan information</h6>
                 <div class="scan_info">Start time&#58;<span class="fulldate">{{ fulldatetime }}</span></div>
-                <div class="mt-3 scan_info">Finish time&#58;{{ fulldatetime }}</div>
+                <div class="mt-3 scan_info">Finish time&#58;<span class="fulldate">{{ fulldatetime }}</span></div>
                 <div class="mt-3 scan_info">scan duration&#58;</div>
                 <div class="mt-3 scan_info">Test Performed&#58;</div>
             </div>
@@ -139,7 +139,7 @@
                   <tr>
                      <td><li class="text-warning"></li></td>
                      <td>4.3</td>
-                     <td class="text-primary" style="font-size:8px;">CVE-2022-11358</td>
+                     <td class="text-primary" style="font-size:12px; width:120px">CVE-2022-11358</td>
                      <td>JQuery before 3.4.0 , as drupal, Bootstrap CMS and other 
                         products mishandles, JQuery extend(true {},...)because of object prototype pollution.if an unsanitized source object contained an enumerable__ptoto__property,it could extend native object prototype
                       </td>
@@ -147,10 +147,10 @@
                       <td>JQuery 3.3.1</td>
                   </tr>
 
-                  <tr>
-                     <td><li class="text-warning"></li></td>
+                  <tr bgcolor="#E5E5E5"> 
+                     <td><li class="list text-warning position-relative"></li><div class="text-primary mt-5">Details</div> </td>
                      <td>4.3</td>
-                     <td class="text-primary" style="font-size:8px;">CVE-2022-11358</td>
+                     <td class="text-primary" style="font-size:12px; width:170px">CVE-2022-11358</td>
                      <td> in JQuery greater than 1.2and before 3.5.0 passing HTML from untrusted source-even after sanitizing it-one of it's JQuery manipulation methods(i.e html), .append{} and others may execute untrusted code.This problem is partner in JQuery 3.5.0
                      </td>
                      <td>N/A</td>
@@ -306,7 +306,7 @@ export default {
         padding:5px 100px;
      }
      .fulldate{
-       //
+       font-weight:normal;
      }
      .vulneral{
       font-family: 'Poppins';
@@ -335,6 +335,9 @@ export default {
      }
      th, td {
       padding: 5px 15px;
+     }
+     .list {
+      top:40px;
      }
      
    }
