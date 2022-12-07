@@ -1,7 +1,8 @@
 <template>
     <b-row class="summary_page h-100 w-100" align-v="stretch">
-        <b-row class="summary_page-bg-white m-5  h-100">
-            <b-row class="button_row m-5">
+      <b-container fluid>
+        <b-row class="summary_page-bg-white m-5  p-5  h-100">
+            <b-row class="button_row">
                 
                 <b-col class="">
                 
@@ -20,14 +21,14 @@
             </b-row>
             <b-row>
                 <b-col>
-                    <h6 class="summary mx-5">Summary</h6>
+                    <h6 class="summary mx-5 mt-5">Summary</h6>
                 </b-col>
                 <b-col class="d-flex justify-content-right align-items-right">
                     
                     <div class="">
                         <b-button
                         variant="clear"
-                        class="download_pdf-report mb-3 mx-5"
+                        class="download_pdf-report mt-5 mb-3 mx-5"
                         >
                             <span class=""><img src="@/assets/download_pdf_report.png" height="20px"></span>
                             <span class="mx-2"> Download report as pdf </span>
@@ -35,16 +36,17 @@
                     </div>
                        
                 </b-col>
+                 
             </b-row>
-             <hr class="mt-5">
+          <hr class="mt-5">  
         <b-row class="mx-5">
-          <b-col>
+          <b-col cols="4">
             <div>
                 <h6>overall risk level</h6>
                 <span class="medium">Medium</span>
             </div>
           </b-col>
-          <b-col>
+          <b-col cols="4">
             <div>
                 <h6>Risk rating</h6>
                 <div class="scan_info">High&#58; <scan class="high mx-5">1</scan></div>
@@ -53,7 +55,7 @@
                 <div class="mt-3 scan_info">Info&#58;<scan class="info mx-5">13</scan></div>
             </div>
           </b-col>
-          <b-col>
+          <b-col cols="4">
             <div>
                 <h6>scan information</h6>
                 <div class="scan_info">Start time&#58;<span class="fulldate">{{ fulldatetime }}</span></div>
@@ -66,13 +68,112 @@
         </b-row>
          <hr class="mt-5">
          <div class="d-flex justify-content-center align-items-center">
-            <h4>Findings</h4>
+            <h4 class="">Findings</h4>
          </div>
          <hr class="mt-5">
+         <b-row>
+            
+            <b-col class="mx-5">
+               
+               <img src="@/assets/Flag.png" height="30px" class="">
+               <span class="vulneral mx-2">Vulnerabilities found server-side software</span>
+               
+            </b-col>
+            <b-col cols="3">
+               <b-form-group>
+                  <b-form-checkbox-group id="solved_checkbox">
+                     <b-form-checkbox
+                        id="solved"
+                        value="1"
+                        unchecked-value=""
+                     >
+                        <div class="mb-3">
+                           Marked as solved
+                        </div>
+                     </b-form-checkbox>
+                  </b-form-checkbox-group>
+               </b-form-group>
+            </b-col>
+         
+            <b-row >
+               <b-col class="mx-5">
+                
+                  <img  class="absolute" src="@/assets/Flag.png" height="30px">
+                  <span class ="vulneral mx-2">Missing security header: Referral-policy <span class="confirm_btn mx-5"><b-button variant="clear" class="btn btn-outline-success" style="border-radius:20px; width:100px; height:40px;">confirm </b-button></span></span>
+            
+               </b-col>
+               <b-col cols="3" class="">
+               <b-form-group>
+                  <b-form-checkbox-group id="solved_checkbox">
+                     <b-form-checkbox
+                        id="solved"
+                        value="1"
+                        unchecked-value=""
+                        class="mx-4"
+                     >
+                        <div class="mb-3">
+                           Marked as solved
+                        </div>
+                     </b-form-checkbox>
+                  </b-form-checkbox-group>
+               </b-form-group>
+               </b-col>
+            </b-row>
+            
+         </b-row>
+         <div class="vulnerability_table p-5">
+             <table style="width:100%">
+                  <thead>
+                     <tr class="row">
+                        <th class="col-md-2">Risk level </th>
+                        <th class="col-md-2">CVSS </th>
+                        <th class="col-md-2">CVE</th>
+                        <th class="col-md-2">API KEY </th>
+                        <th class="col-md-2">STATUS</th>
+                        <th class="col-md-2">ACTION</th>
+                     </tr>
+                  
+                  </thead>
+                  <tbody>
+                  
+                  <tr class="row">
+                     <td class="col-md-2"><li class="style-color-warning"></li></td>
+                     <td class="col-md-2">4.3</td>
+                     <td class="col-md-2">CVE-2022-11358</td>
+                     <td class="col-md-2" width="50%">JQuery before 3.4.0 , as drupal, Bootstrap CMS and other 
+                        products mishandles, JQuery extend(true {},...)because of object prototype pollution.if an unsanitized source object contained an enumerable__ptoto__property,it could extend native object prototype
+                      </td>
+                      <td class="col-md-2">N/A</td>
+                      <td class="col-md-2">JQuery 3.3.1</td>
+                  </tr>
+
+                  <tr class="row">
+                     <td class="col-md-2"><li class=""></li></td>
+                     <td class="col-md-2">4.3</td>
+                     <td class="col-md-2">CVE-2022-11358</td>
+                     <td class="col-md-2"> in JQuery greater than 1.2and before 3.5.0 passing HTML from untrusted source-even after sanitizing it-one of it's JQuery manipulation methods(i.e html), .append{} and others may execute untrusted code.This problem is partner in JQuery 3.5.0
+                     </td>
+                     <td class="col-md-2">N/A</td>
+
+                     <td class="col-md-2">JQuery 3.5.0</td>
+                  </tr>
+                  </tbody>
+               </table>
+            <div class="descriptiob_bg p-4">
+               <div class="risk_description mt-5">
+                  <h6 class="risk_description__header">Risk Description</h6>
+                  <p class="risk_description__para">These vulnrabilities exposed the affected application to the risk of unauthorized access to confidential data and possibly to denial of service attacks. An attacker could search for an appropriate exploit(0r create one himself) for any of these vulnerabilities and use it to attack the system</p>
+               </div>
+               <div class="recommendation mt-5">
+                  <h6 class="recommendation__header">Recommendations</h6>
+                  <p class="recommendation__para"> We rcommend you to upgrade the affected software to the lastest version in order to elimiate the risk of these vulnerabilities</p>
+               </div>
+            </div>
+         </div>
         </b-row>
        
        
-
+      </b-container>
     </b-row>
 </template>
 <script>
@@ -201,5 +302,24 @@ export default {
      .fulldate{
        //
      }
+     .vulneral{
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+     }
+     .descriptiob_bg{
+      background: #E5E5E5;
+     }
+     .risk_description__header, .recommendation__header{
+      color:#000000;
+     }
+     .risk_description__para, .recommendation__para{
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 22px;
+     }
+     
    }
 </style>
