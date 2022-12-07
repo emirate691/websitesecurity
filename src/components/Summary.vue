@@ -12,8 +12,8 @@
                 </b-col>
                 <b-col class="mt-3">
                     <div class="right_section d-flex justify-content-right align-items-right mb-2">
-                        <b-button class="download-btn mx-5" variant="clear">Download wordpress security fixed plugin</b-button>
-                        <b-button class="rescan-btn mx-2" variant="clear">Rescan website</b-button>
+                        <b-button class="download-btn mx-5 w-100" variant="clear">Download wordpress security fixed plugin</b-button>
+                        <b-button class="rescan-btn mx-2 w-" variant="clear">Rescan website</b-button>
 
                     </div>
                 </b-col>
@@ -122,40 +122,46 @@
             
          </b-row>
          <div class="vulnerability_table p-5">
-             <table style="width:100%">
+             <table class="w-100">
                   <thead>
-                     <tr class="row">
-                        <th class="col-md-2">Risk level </th>
-                        <th class="col-md-2">CVSS </th>
-                        <th class="col-md-2">CVE</th>
-                        <th class="col-md-2">API KEY </th>
-                        <th class="col-md-2">STATUS</th>
-                        <th class="col-md-2">ACTION</th>
+                     <tr bgcolor="#E5E5E5">
+                        <th>Risk level </th>
+                        <th>CVSS </th>
+                        <th>CVE</th>
+                        <th>API KEY </th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
                      </tr>
                   
                   </thead>
                   <tbody>
                   
-                  <tr class="row">
-                     <td class="col-md-2"><li class="style-color-warning"></li></td>
-                     <td class="col-md-2">4.3</td>
-                     <td class="col-md-2">CVE-2022-11358</td>
-                     <td class="col-md-2" width="50%">JQuery before 3.4.0 , as drupal, Bootstrap CMS and other 
+                  <tr>
+                     <td><li class="text-warning"></li></td>
+                     <td>4.3</td>
+                     <td class="text-primary" style="font-size:8px;">CVE-2022-11358</td>
+                     <td>JQuery before 3.4.0 , as drupal, Bootstrap CMS and other 
                         products mishandles, JQuery extend(true {},...)because of object prototype pollution.if an unsanitized source object contained an enumerable__ptoto__property,it could extend native object prototype
                       </td>
-                      <td class="col-md-2">N/A</td>
-                      <td class="col-md-2">JQuery 3.3.1</td>
+                      <td>N/A</td>
+                      <td>JQuery 3.3.1</td>
                   </tr>
 
-                  <tr class="row">
-                     <td class="col-md-2"><li class=""></li></td>
-                     <td class="col-md-2">4.3</td>
-                     <td class="col-md-2">CVE-2022-11358</td>
-                     <td class="col-md-2"> in JQuery greater than 1.2and before 3.5.0 passing HTML from untrusted source-even after sanitizing it-one of it's JQuery manipulation methods(i.e html), .append{} and others may execute untrusted code.This problem is partner in JQuery 3.5.0
+                  <tr>
+                     <td><li class="text-warning"></li></td>
+                     <td>4.3</td>
+                     <td class="text-primary" style="font-size:8px;">CVE-2022-11358</td>
+                     <td> in JQuery greater than 1.2and before 3.5.0 passing HTML from untrusted source-even after sanitizing it-one of it's JQuery manipulation methods(i.e html), .append{} and others may execute untrusted code.This problem is partner in JQuery 3.5.0
                      </td>
-                     <td class="col-md-2">N/A</td>
+                     <td>N/A</td>
 
-                     <td class="col-md-2">JQuery 3.5.0</td>
+                     <td>JQuery 3.5.0</td>
+                  </tr>
+                  <tr>
+                     <td>URL</td>
+                     <td></td>
+                     <td></td>
+                     <td>EVIDENCE</td>
                   </tr>
                   </tbody>
                </table>
@@ -319,6 +325,16 @@ export default {
       font-style: normal;
       font-weight: 300;
       font-size: 22px;
+     }
+     table {
+      
+      border-collapse:collapse
+     }
+     table, th, td {
+      border: 1px solid  #E5E5E5;
+     }
+     th, td {
+      padding: 5px 15px;
      }
      
    }

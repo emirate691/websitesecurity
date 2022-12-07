@@ -85,6 +85,7 @@ export default {
 
     .websitesecurity_page {
         overflow-y:hidden;
+        
         &-url_scanner{
             
             &-container{
