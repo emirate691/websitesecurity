@@ -7,15 +7,15 @@
                 <div class="scanning_page-scanning_url d-flex justify-content-center align-items-center  m-5 p-5 h-100 mt-5 pt-5">
                     <div class="h-100">
                         <span class="mt-5">
-                            Scanning "Https&#58;//maintestwebsite.com"
+                            Scanning "Https://maintestwebsite.com"
                         </span>
-                        <div class="pt-5 mx-5">
+                        <div class="d-flex justify-content-center align-items-center pt-5">
                             <div class="successful_scanned">
                                 <scan class="processing m-5 position-absolute">processing</scan>
                             </div>
                         </div>
-                        <div class="mt-5">
-                            <span class="mt-5 pt-5">Successful scanned... please wait</span>
+                        <div class="mt-5 d-flex justify-content-center align-items-center">
+                            <span class="">Successful scanned... please wait</span>
                         </div>
                     </div>
 

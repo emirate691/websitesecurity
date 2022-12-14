@@ -8,7 +8,7 @@
             <b-col>
                 <div class="d-flex justify-content-left align-items-left h-100 mt-5 pt-5">
                     <div class="websitesecurity_page-url_scanner">
-                        <h4>Website scanner</h4>
+                        <h4>Website scanner</h4 >  
                 
                     <div class="websitesecurity_page-url_scanner-container mt-3 h-100">
                         <div class="mx-4">

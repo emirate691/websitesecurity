@@ -9,7 +9,7 @@
                         <span class="mt-5">
                             Scanning "Https&#58;//maintestwebsite.com"
                         </span>
-                        <div class="scan" > 
+                        <div class="scan"  > 
                             
                             <img src="@/assets/scaning__process.png" class="m-5 pt-5">
                         </div>
@@ -35,7 +35,7 @@ export default {
           if (this.counter < 100) {
             setTimeout(() => {
                 this.counter += 1
-                this.scanCounte() }, 1000)
+                this.scanCounte() }, 10000)
           }
             
         },
